@@ -1,19 +1,25 @@
-package POO_Examples;
+package POO;
+
+import java.util.Date;
 
 public class EjemploAutomovil {
     public static void main(String[] args) {
-        Automovil nissan = new Automovil();
+        Date fecha = new Date();
+        Automovil nissan = new Automovil("Toyota", "Corolla");
+        nissan.setColor(Color.BLANCO);
+        nissan.setCilindraje(1.6);
 
-        nissan.fabricante = "Toyota";
-        nissan.modelo = "Corolla";
-        nissan.color = "Azul";
-        nissan.cilindraje = 1.8;
+        Automovil mazda = new Automovil("Mazda", "BT-50", Color.NARANJA, 2.5, 50);
 
-        Automovil mazda = new Automovil();
-        mazda.fabricante = "Mazda";
-        mazda.modelo = "Mazda 3";
-        mazda.color = "Gris";
-        mazda.cilindraje = 2.0;
+        Automovil toyota = new Automovil("toyota", "corolla", Color.AZUL, 1.6, 50);
+        Automovil toyota2 = new Automovil("toyota", "corolla", Color.ROJO, 1.6, 50);
+        System.out.println("Son iguales " + (toyota == toyota2));
+        System.out.println("Son iguales " + toyota.equals(toyota2));
+
+        Automovil auto = new Automovil();
+        System.out.println("Son iguales " + (auto.equals(fecha)));
+
+        System.out.println(nissan);
 
         System.out.println(nissan.verDetalle());
         System.out.println(mazda.verDetalle());
@@ -23,6 +29,13 @@ public class EjemploAutomovil {
         System.out.println(mazda.frenar());
 
         System.out.println(nissan.acelerarFrenar(4000));
+        System.out.println("Kilomotros por litro " + nissan.calcularConsumo(300, 0.75f));
+        System.out.println("Kilomotros por litro " + nissan.calcularConsumo(300, 75));
+        System.out.println("Kilomotros por litro " + toyota.calcularConsumo(300, 75));
+
+
+        int a = 0;
+
 
 
     }
